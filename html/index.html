@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/common.css">
+    <script type="javascript" src="js/ui.js"></script> -->
+
+
+    <!-- 공통으로 불러오는.. -->
+    <script src="js/common.css.js"></script>
+    <script src="js/common.ui.js"></script>
+
+    <title>Document</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="">
+
+    <!-- script -->
+    <script src=""></script>
+
+
+</head>
+<body>
+    <div id="skipNavi">
+        <a href="#container">본문 바로가기</a>
+        <a href="#gnb">메뉴 바로가기</a>
+        <a href="#footer">사이트정보 바로가기</a>
+    </div>
+
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header id="header">
+            <div class="head_in">
+                <div class="head_top">
+                    
+                </div>
+                <div class="head_cont">
+                    <div class="ly_inner">
+                        <button type="button" class="btn_prev"><span>이전</span></button>
+                        <h1 class="title">타이틀</h1>
+                        <div class="util_wrap">
+                            <button type="button" class="btn_search"></button>
+                            <button type="button" class="btn_menu"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+
+        <!-- container -->
+        <div id="container">
+            <!-- contents -->
+            <section class="contents">
+                
+                
+
+                <!-- tab -->
+                <div class="tab_wrap">
+                    <div class="tab_list"><!-- type1, type2 -->
+                        <ul>
+                            <li class="is_focused">
+                                <a href="javascript:;">
+                                    <span></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab_cont_wrap">
+                        <div class="tab_cont is_act"></div>
+                        <div class="tab_cont"></div>
+                        <div class="tab_cont"></div>
+                    </div>
+                </div>
+                <!-- //tab -->
+
+                <!-- 아코디언 -->
+                <p>#1개일때</p>
+                <div class="acco_list">
+                    <div class="acco_tit">
+                        <p>title 내용</p>
+                        <a href="#" class="acco_btn" role="button" aria-expanded="false"><span>열기</span></a>
+                    </div>
+                    <div class="acco_cont">
+                        <div class="box"><!-- 안에 회색박스 같은 디자인일때 공통으로 사용 -->
+                            
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <p>#2개 이상일때</p>
+                <ul>
+                    <li class="acco_list">
+                        <div class="acco_tit">
+                            <p>title 내용</p>
+                            <a href="#" class="acco_btn" role="button" aria-expanded="false"><span>열기</span></a>
+                        </div>
+                        <div class="acco_cont">
+                            <div class="box"><!-- 안에 회색박스 같은 디자인일때 공통으로 사용 -->
+                                
+                            </div>
+                        </div>
+                    </li>
+                    <li class="acco_list">
+                        <div class="acco_tit">
+                            <p>title 내용</p>
+                            <a href="#" class="acco_btn" role="button" aria-expanded="false"><span>열기</span></a>
+                        </div>
+                        <div class="acco_cont">
+                            <div class="box"><!-- 안에 회색박스 같은 디자인일때 공통으로 사용 -->
+                                
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- //아코디언 -->
+
+
+                <a href="#popup" class="btn ui-pop-open" title="팝업열기"><span>버튼</span></a>
+
+                <!-- toast -->
+                <a href="#" onclick="uiToastMsg({text:'들어갈 텍스트 내용', button: $(this), position:'center'})">토스트팝업</a>
+
+            </section>
+            <!-- //contents -->
+        </div>
+        <!-- //container -->
+
+    </div>
+    <!-- //wrap -->
+
+    <!-- popup -->
+    <div id="popup" class="popup_wrap full">
+        <article class="popup">
+            <div class="popup_head">
+                <h2 class="title"></h2>
+            </div>
+            <div class="pop_cont">
+
+            </div>
+            <div class="btn_wrap">
+                <button type="button" class=""></button>
+            </div>
+            <button type="button" class="btn_close pop_close ui-pop-close"><span>팝업닫기</span></button>
+        </article>
+    </div>
+    <!-- //popup -->
+
+</body>
+</html>
