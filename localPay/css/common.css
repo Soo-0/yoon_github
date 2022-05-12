@@ -219,6 +219,11 @@ body.scroll_hidden{overflow:hidden}
 .ic_txt.line_green{background:none;border-color:#18a327;color:#18a327}
 .ic_txt.line_skyblue{background:none;border-color:#0f9ec6;color:#0f9ec6}
 .ic_txt.round{border-radius:30px}
+.ico_img{display:inline-block;background:center no-repeat;font-size:1px;color:transparent;vertical-align:middle;}
+.ico_13{width:13px;height:13px;background-size:13px}
+.ico_13.logout{background-image:url(../images/common/icow_logout.png)}
+.ico_18{width:18px;height:18px;background-size:18px;}
+
 
 /* form */
 [type="checkbox"], [type="radio"]{padding:0;box-sizing:border-box} 
@@ -351,9 +356,12 @@ body.scroll_hidden{overflow:hidden}
 .head_in.bdrB{border-bottom:1px solid #eee} */
 #header .head_top{position:relative;height:40px;line-height:40px}
 #header .head_top .top_util{float:right}
-#header .head_top .top_util > li{display:inline-block;padding:0 5px}
-#header .head_top .top_util > li:before{content:'';width:1px;height:15px;background:#ddd}
+#header .head_top .top_util > li{float:left;position:relative;padding:0 15px;font-size:15px;}
+#header .head_top .top_util > li + li:before{content:'';position:absolute;top:50%;left:0;transform:translateY(-50%);width:1px;height:15px;background:#ddd}
+#header .head_top .top_util .logout{margin-right:10px}
+#header .head_top .top_util .refresh{display:inline-block;height:17px;margin-left:10px;padding:0 10px;background:#d5dcee;font-size:11px;line-height:17px;border-radius:3px;vertical-align:middle}
 #header .head_cont{position:relative}
+#header .head_cont .btn_prev{}
 
 
 /* contents */
