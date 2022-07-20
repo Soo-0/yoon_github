@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+*:not(.oz_ui_layout), *:before, *:after{box-sizing:border-box;word-break:keep-all;word-wrap:break-word}
+html{height:100%}
+body, h1, h2, h3, h4, h5, h6, fieldset, ul, ol, dl, dt, dd, p, button, figure, xmp{margin:0;padding:0}
+body{font:400 15px/1.5 'NanumBarunGothic', 'sans-serif';height:100%;color:#111;word-break:keep-all;-webkit-touch-callout:none;box-sizing:border-box;-webkit-text-size-adjust:none;text-size-adjust:none}
+legend, caption{overflow:hidden;width:1px;height:1px;color:transparent}
+a{text-decoration:none;color:inherit}
+a[href^="tel"]{cursor:default}
+img:not(.oz_ui_layout){vertical-align:middle;border:0 none;width:100%}
+fieldset, button{background:none;border:0}
+li{list-style:none}
+table{width:100%;border-spacing:0;border-collapse:collapse}
+caption{font-size:0;line-height:0}
+iframe{width:100%;vertical-align:middle;border:0 none}
+button, input, optgroup, select, textarea{font:inherit}
+button{cursor:pointer;outline:0}
+h1, h2, h3, h4, h5, h6{font-weight:700;-webkit-font-smoothing:subpixel-antialiased}
+input, select, textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-border-radius:0;border-radius:0;outline:0}
+b, strong{font-weight:700}
+em{font-style:inherit}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    /* src: local(없을경우 당구장표시); */
+    src:url(../font/NanumBarunGothicUltraLightSubset.eot) format('embeded-opentype'),
+        url(../font/NanumBarunGothicUltraLightSubset.woff) format('woff'),
+        url(../font/NanumBarunGothicUltraLightSubset.woff2) format('woff2'),
+        url(../font/MaruBuri-SemiBold.ttf) format('truetype');
+    font-weight:400;
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    /* src: local(없을경우 당구장표시); */
+    src:url(../font/NanumBarunGothicSubset.eot) format('embeded-opentype'),
+        url(../font/NanumBarunGothicSubset.woff) format('woff'),
+        url(../font/NanumBarunGothicSubset.woff2) format('woff2'),
+        url(../font/MaruBuri-Regular.ttf) format('truetype');
+    font-weight:700;/* 굵기 마다 지정 */
+    font-style:normal;
+}
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    /* src: local(없을경우 당구장표시); */
+    src:url(../font/NanumBarunGothicBoldSubset.eot) format('embeded-opentype'),
+        url(../font/NanumBarunGothicBoldSubset.woff) format('woff'),
+        url(../font/NanumBarunGothicBoldSubset.woff2) format('woff2'),
+        url(../font/MaruBuri-Bold.ttf) format('truetype');
+    font-weight:900;
+    font-style:normal;
+}
+
+/* wrap */
+#wrap{position:relative;height:100%}
+
+/* layout */
+.ly_inner{width:100%;max-width:1200px;margin:0 auto}
+
+/* header */
+#header{position:fixed;top:0;left:0;right:0;height:90px}
+#header .head_top{height:30px;background:#fff;}
+#header .head_top .inner{float:right;padding:0 20px;line-height:30px}
+#header .head_top .name{float:left;margin-right:30px}
+#header .head_util{float:left;font-size:0}
+#header .head_util > li{display:inline-block;position:relative;font-size:15px;}
+#header .head_util > li + li:before{display:inline-block;content:'';width:1px;height:12px;margin:0 10px;background:#aaa;vertical-align:middle;}
+#header .head_util > li a{}
+#header .head_cont{display:flex;align-items:center;justify-content: space-between;width:100%;height:60px;padding:0 40px;background:#343d5a}
+#header .logo{}
+#header .gnb_wrap{}
+#header .gnb_wrap li{display:inline-block;padding:0 20px}
+#header .gnb_wrap li a{color:#a8afc2}
+#header .gnb_wrap li.on a{font-weight:bold;color:#fff}
+
+.contents{display:table;width:100%;padding-top:90px;table-layout:fixed}
+.contents > .ly_box{display:table-cell}
+.contents > .ly_box.left{}

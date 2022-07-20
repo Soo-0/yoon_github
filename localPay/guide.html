@@ -150,6 +150,34 @@
                             <i></i>
                             <span>선택</span>
                         </label>
+                        <p>#checkbox all</p>
+                        <dl class="check_group">
+                            <dt>
+                                <label class="chkbox">
+                                    <input type="checkbox" class="chk_all">
+                                    <i></i>
+                                    <span>선택</span>
+                                </label>
+                            </dt>
+                            <dd>
+                                <ul class="chk_list">
+                                    <li>
+                                        <label class="chkbox">
+                                            <input type="checkbox">
+                                            <i></i>
+                                            <span>선택</span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="chkbox">
+                                            <input type="checkbox">
+                                            <i></i>
+                                            <span>선택</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
                         <h3 class="sub_txt"><span>radio</span></h3>
                         <label class="radio">
                             <input type="radio">
@@ -169,6 +197,37 @@
                         <div class="input_wrap">
                             <input type="text" class="input error" title="" placeholder="error">
                             <button type="button" class="btn_del">삭제</button>
+                        </div>
+                        <div class="input_group">
+                            <div class="input_wrap">
+                                <input type="text" class="input" title="" placeholder="이메일 앞자리 입력">
+                                <button type="button" class="btn_del">삭제</button>
+                            </div>
+                            <span class="etc">@</span>
+                            <div class="input_wrap">
+                                <div class="sel_wrap email">
+                                    <a href="javascript:void(0)" role="button" class="btn_sel">선택</a>
+                                    <ul class="sel_list">
+                                        <li class="on"><a href="#" role="button">선택</a></li>
+                                        <li><a href="#" role="button">naver.com</a></li>
+                                        <li><a href="#" role="button">daum.net</a></li>
+                                        <li><a href="#" role="button">hanmail.net</a></li>
+                                        <li><a href="#" role="button" data-title="직접입력">직접입력</a></li>
+                                    </ul>
+                                    <select class="select" title="이메일 계정 선택" data-title="메일선택" data-required="" aria-hidden="true" tabindex="-1">
+                                        <option value="">메일선택</option>
+                                        <option value="naver.com">naver.com</option>
+                                        <option value="daum.net">daum.net</option>
+                                        <option value="hanmail.net">hanmail.net</option>
+                                        <option value="nate.com">nate.com</option>
+                                        <option value="gmail.com">gmail.com</option>
+                                        <option value="kornet.net">kornet.net</option>
+                                        <option value="직접입력">직접입력</option>
+                                    </select>
+                                </div>
+                                <input type="text" class="input" title="직접입력" placeholder="text">
+                                <button type="button" class="btn_del">삭제</button>
+                            </div>
                         </div>
                         <p class="txt_error">error text</p>
                         <p class="txt_alert">알림 text</p>
@@ -321,8 +380,6 @@
                         <a href="javascript:void(0)" class="btn round2 full purple" title="팝업열기" onclick="uiToastMsg({text:'들어갈 텍스트 내용', button: $(this), position:'center'})">toast pop</a>
                     </div>
                 </div>
-
-                
 
                 <!-- toast -->
                 

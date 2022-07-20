@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 회전</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        button {
+            width:80px;
+            height:80px;
+            border:1px solid #000;
+            background:#fff;
+            font-size: 18px;
+            border-radius:100%;
+            text-align:center;
+            cursor: pointer;
+        }
+
+        button:disabled{
+            opacity:1;
+        }
+
+        .rouletteWrap {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 30px;
+            border-radius: 100%;
+        }
+
+        .rouletteWrap .roulette {
+            width: 300px;
+            height: 300px;
+            background: url(image/roulette.png) no-repeat 0 0/100%;
+            /* transition: transform 2s cubic-bezier(1.000, -0.010, 0.175, 0.970); */
+            transition: transform 2s ease-out;
+        }
+
+        .rouletteWrap .arrow {
+            z-index:10;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform:translateX(-50%) rotateZ(180deg);
+            width: 50px;
+        }
+
+        .startBtn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%, -50%)
+        }
+    </style>
+    <script>
+        //랜덤, transform, rotate
+
+        window.onload = function () {
+            const rolLength = 6;//룰렛 내용 갯수
+            const startBtn = document.querySelector(".startBtn");
+            const h1 = document.getElementsByTagName("h1")[0];
+            const min = 0;
+            const max = rolLength - 1;
+            let rotateNum = 0;
+            // let rotateChk = false;
+            let roulette = document.querySelector(".rouletteWrap .roulette");
+
+            startBtn.addEventListener("click", function () {
+                evtStart();
+                // if(!rotateChk) {//ture일때
+                //     evtStart();
+                //     rotateChk = true;
+                // }else{
+                //     evtReset();
+                //     evtStart();
+                // }
+            });
+
+            function evtStart() {
+                let num = 0;
+                let deg = [];
+                for (var i = 1; i <= rolLength; i++) {
+                    deg.push((360 / rolLength) * i);
+                }
+                
+                rotateNum = deg[Math.round(Math.random() * (max - min))];
+                roulette.style.transform = "rotate(0deg)";
+                roulette.style.transitionDuration  = "0s";
+                const ani = setInterval(() => {
+                    num++;
+                    roulette.style.transitionDuration  = "2s";
+                    roulette.style.transform = "rotate(" + 360 * num + "deg)";
+                    h1.innerHTML = '[' + deg + '] : ' + rotateNum + "deg";
+                    if (num === 20) {
+                        clearInterval(ani);
+                        roulette.style.transform = "rotate(" + (360 * num + rotateNum) + "deg)";
+                    }
+                    // startBtn.disabled = true;
+                    // startBtn.innerHTML = '종료'
+                }, 50);
+            }
+
+            // function evtReset(){
+            //     roulette.style.transform = "rotate(0deg)";
+            //     roulette.style.transitionDuration  = "0s";
+            // }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>0deg</h1>
+    <div class="rouletteWrap">
+        <img src="./image/up-arrow.svg" alt="arrow" class="arrow">
+        <div class="roulette"></div>
+        <button type="button" class="startBtn">시작</button>
+    </div>
+
+</body>
+
+</html>

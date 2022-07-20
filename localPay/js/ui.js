@@ -13,6 +13,7 @@ var UIinit = function(){
     datepicker.init();//달력
     selectUI.init()//셀렉트
     // dragPop();//하단 팝업
+    inputChange();
 }
 
 /* 지역화폐 팝업 스타일
@@ -490,6 +491,10 @@ var selectUI = {
                 })
 
                 if($this.hasClass('on')){
+                    $thPrnts.focusout(function(){
+                        let $this = $(this);
+                        console.log($this)
+                    })
                     $this.removeClass('on').attr('aria-expanded','false').next('.sel_list').hide();
                     $this.parents('.sel_wrap').removeClass('bottom');
                 }else{
@@ -605,3 +610,29 @@ var dragPop = function(){
 
     }
 }
+
+var inputChange = function(){
+    //이메일 직접입력
+    $('.sel_wrap.email').on('click','.sel_list li a', function() {
+        let $this = $(this);
+        if($this.attr('data-title') == '직접입력') {
+            $this.closest('.sel_wrap.email').attr('aria-hidden','true');
+            setTimeout(function(){
+                $this.closest('.sel_wrap.email').siblings('.input').addClass('show').focus();
+            }, 100);
+        }
+    });
+
+    $('.sel_wrap.email').siblings('.input').on('blur', function(){
+        const $a_txt = $(this).siblings('.sel_wrap.email').children('.sel_list').find('li:first-child a').text();
+        // const $cont = $(this).siblings('.sel_wrap.email').children('.sel_list');
+        // $cont.scrollTop = $cont.scrollHeight;
+		if($(this).val() == ''){
+			$(this).siblings('.sel_wrap.email').removeAttr('aria-hidden');
+            $(this).siblings('.sel_wrap.email').children('.sel_list').find('li:first-child').addClass('on').siblings('li').removeClass('on');
+            $(this).siblings('.sel_wrap.email').children('.btn_sel').text($a_txt);
+			$(this).removeClass('show');
+		} 
+	});
+}
+

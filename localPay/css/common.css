@@ -151,6 +151,9 @@ body.scroll_hidden{overflow:hidden}
 .input[type='number'].error:focus{padding:1px 0 0 0;border-bottom:2px solid #dc0000}
 .datepicker{width:100%;padding-right:28px}
 .inp_datepicker{position:absolute;top:0;left:0;width:100%;height:100%;background:none;padding-right:5px;border:0 none;color:transparent;opacity:0;font-size:30em}
+.input_group{display:flex;align-items:center;}
+.input_group .input_wrap{flex:1}
+.input_group .etc{padding:0 10px}
 .input_wrap{position:relative;width:100%}
 .input_wrap .input + .btn_del{display:none;position:absolute;top:50%;right:4px;transform:translateY(-50%);width:16px;height:16px;background:#eee;border-radius:100%;font-size:1px}
 .input_wrap .input + .btn_del.on{display:block}
@@ -158,7 +161,7 @@ body.scroll_hidden{overflow:hidden}
 
 /* text type */
 .txt_error{margin-top:10px;font-size:13px;color:#f53851}
-.txt_alert{margin-top:10px;padding-left:20px;background:url();background-size:12px;font-size:13px;color:#546caa}
+.txt_alert{margin-top:10px;padding-left:20px;background:url(../images/new/ico_alert_blue.png) no-repeat;background-size:12px;font-size:13px;color:#546caa}
 
 /* tab */
 .tab_wrap{}
@@ -250,6 +253,11 @@ body.scroll_hidden{overflow:hidden}
 .form_box{}
 .form_box .form_tit{}
 .form_box .form_cont{}
+.check_group{border:1px solid #ddd;border-radius:9px}
+.check_group dt{}
+.check_group dd{}
+.chk_list{}
+.chk_list > li{margin-top:10px}
 
 /* select */
 .sel_wrap{position:relative}
@@ -261,7 +269,7 @@ body.scroll_hidden{overflow:hidden}
 .sel_wrap .sel_list:before{content:'';position:absolute;top:0;left:20px;right:20px;width:auto;height:1px;background:#5f5fb6}
 .sel_wrap .sel_list > li{position:relative;}
 .sel_wrap .sel_list > li a{display:block;padding:10px 42px 10px 20px;font-size:15px;line-height:1.2;color:#fff;word-break:break-all;word-wrap:break-word}
-.sel_wrap .sel_list > li.on a:after{content:'';position:absolute;top:50%;right:20px;transform:translateY(-50%);width:14px;height:11px;border:solid #fff;border-width:0 0 2px 2px;transform:rotate(-45deg);-webkit-transform:rotate(-45deg)}
+.sel_wrap .sel_list > li.on a:after{content:'';position:absolute;top:50%;right:20px;width:14px;height:11px;border:solid #fff;border-width:0 0 2px 2px;transform:translateY(-50%) rotate(-45deg);-webkit-transform:translateY(-50%) rotate(-45deg)}
 .sel_wrap.small{display:block;position:relative;font-size:0}
 .sel_wrap.small .btn_sel{display:inline-block;width:auto;height:55px;padding-left:0;background:#fff;line-height:55px;color:#000}
 .sel_wrap.small .btn_sel:after{}
@@ -270,7 +278,15 @@ body.scroll_hidden{overflow:hidden}
 .sel_wrap.small .sel_list:before{content:none}
 .sel_wrap.small .sel_list li a{padding:7.5px 45px 7.5px 15px;line-height:1.2;color:#333}
 .sel_wrap.small .sel_list li.on > a:after{right:15px;margin-top:-9px;background-position:0 -11px}
-
+.sel_wrap.email .btn_sel{height:40px;padding-left:0;background:#fff;border-bottom:1px solid #bbb;line-height:42px;border-radius:0;color:#333}
+.sel_wrap.email .btn_sel:after{border-color:#333}
+.sel_wrap.email .sel_list{top:40px;max-height:none;background:#fff;border:solid #bbb;border-width:0 1px 1px} 
+.sel_wrap.email .sel_list:before{content:none}
+.sel_wrap.email .sel_list li a{padding-left:0;color:#333}
+.sel_wrap.email .sel_list > li.on a:after{border-color:#333}
+.sel_wrap.email + .input{display:none;position:absolute;top:0;left:0;width:100%;}
+.sel_wrap.email + .input.show{display:block}
+.sel_wrap .select{position:absolute;top:0;left:0;width:1px;height:1px;margin:-1px;padding:0;background:transparent;border:0;color:transparent}
 /* dragpop */
 .btm_drag_pop{position:fixed;bottom:0;left:0;right:0;z-index:10;height:calc(100% - 100px);background:#fff;transition:3s top;-webkit-transition:3s top;box-shadow:0 -5px 12px 0 rgba(0, 0, 0, 0.07);border-radius:20px 20px 0 0}
 .btm_drag_pop .btn_drag{display:block;position:relative;width:100%;height:24px}
